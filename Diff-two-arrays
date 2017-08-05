@@ -1,0 +1,30 @@
+
+function diffArray(arr1, arr2) {
+//1a. Create two dummy arrays so we can slice the originals
+//1b. Cannot just copy arr to oneArr, need to use slice or another method
+  
+  var oneArr = arr1.slice();
+  var twoArr = arr2.slice();
+  var arr3 = [];
+  
+  for (var i = 0; i < arr2.length; i++) {
+    for (var j = arr1.length - 1; j >=0; j--) {
+      if (arr2[i] === arr1[j]) {
+        arr1.splice(j, 1);
+      }
+    }
+  }
+  
+  for (i = 0; i < oneArr.length; i++) {
+    for (j = arr2.length-1; j >= 0; j--) {
+      if (oneArr[i] === arr2[j]) {
+        arr2.splice(j, 1);
+      }
+    }
+  }
+  
+  var arr3 = arr1.concat(arr2);
+  return arr3;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
