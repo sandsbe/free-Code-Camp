@@ -1,0 +1,21 @@
+
+function largestOfFour(arr) {
+  // 1. Create second array to help
+  var helperArr = [];
+  // 2. Use for loop to run through array
+  for (i = 0; i < arr.length; i++) {
+  // 3. Use for loop to run through sub-arrays
+  // 4. Use comparison for and if loops
+      var large = arr[i][0];
+      for (j = 1; j <arr[i].length; j++) {
+          if (large < arr[i][j]) {
+             large = arr[i][j];
+          }
+      }
+  // 5. Push largest number into dummy array
+    helperArr.push(large);
+  }
+  return helperArr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
