@@ -1,0 +1,19 @@
+
+function confirmEnding(str, target) {
+// 1. Get length of string so can subtract target length to get start
+  var lengthStr = str.length;
+// 2. Get target length
+  var lengthTarget = target.length;
+// 3. Check length
+  var startLength = lengthStr - lengthTarget;
+// 4. Get starting point
+  var compCheck = str.substr(startLength, lengthTarget);
+// 5. Compare 
+  if (compCheck == target) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+confirmEnding("Bastian", "n");
