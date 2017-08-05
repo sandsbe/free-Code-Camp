@@ -1,0 +1,19 @@
+
+function sumAll(arr) {
+  var a = arr[0];
+  var b = arr[1];
+  var c = Math.abs(b-a);
+  var d = 0;
+  if (b>a) {
+    for (i = 0; i < (c+1); i++) {
+      d += (a+i);
+    }
+  } else {
+    for (i = 0; i < (c+1); i++) {
+    d += (b+i);
+    }
+  }
+  return d;
+}
+
+sumAll([1, 4]);
