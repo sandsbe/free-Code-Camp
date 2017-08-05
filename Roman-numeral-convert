@@ -1,0 +1,236 @@
+
+function convertToRoman(num) {
+/*  roman numerials
+    1  5  10  50  100  500  1000
+    I  V  X   L    C    C    M
+    
+    1  2    3    4  5  6    7    8    9
+    I  II  III  IV  V  VI  VII  VIII  IX
+
+    10  20  30  40  50  60  70    80  90
+    X   XX  XXX  XL  L  LX  LXX  LXXX  XC
+    
+    100  200  300  400  500  600  700  800  900
+    C    CC   CC    CD  D    DC   DCC  DCCC  CM
+*/
+// convert num into string and digits into numbers
+  var numStr = String(num);
+  var oneStr = "";
+  var oneNum = 0;
+  var twoStr = "";
+  var twoNum = 0;
+  var thrStr = "";
+  var thrNum = 0;
+  var forStr = "";
+  var forNum = 0;
+  var ansStr = "";
+  
+  if (num < 10) {
+    oneStr = String(num).charAt(0);
+    oneNum = Number(oneStr);
+  } else if (num < 100) {
+    oneStr = String(num).charAt(0);
+    oneNum = Number(oneStr);
+    twoStr = String(num).charAt(1);
+    twoNum = Number(twoStr);
+  } else if (num < 1000) {
+    oneStr = String(num).charAt(0);
+    oneNum = Number(oneStr);
+    twoStr = String(num).charAt(1);
+    twoNum = Number(twoStr);
+    thrStr = String(num).charAt(2);
+    thrNum = Number(thrStr);
+  } else {
+    oneStr = String(num).charAt(0);
+    oneNum = Number(oneStr);
+    twoStr = String(num).charAt(1);
+    twoNum = Number(twoStr);
+    thrStr = String(num).charAt(2);
+    thrNum = Number(thrStr);
+    forStr = String(num).charAt(3);
+    forNum = Number(forStr);
+  }
+// one digit
+  if (twoStr.length === 0) {
+    // first digit
+    if (oneNum >= 1 && oneNum <= 3) { 
+       for (i = 0; i < oneNum; i++) {
+        ansStr += "I";
+       }
+    } else if (oneNum == 4) {
+        ansStr += "IV";
+    } else if (oneNum == 9) {
+        ansStr += "IX";
+    } else if (oneNum == 5) {
+        ansStr += "V";
+    } else { 
+        ansStr += "V";
+        for (i=5; i < oneNum; i++) {
+          ansStr += "I";
+        }
+    }
+// two digits
+  } else if (thrStr.length === 0) {
+    // first digit
+    if (oneNum >= 1 && oneNum <= 3) { 
+       for (i = 0; i < oneNum; i++) {
+        ansStr += "X";
+       }
+    } else if (oneNum == 4) {
+        ansStr += "XL";
+    } else if (oneNum == 9) {
+        ansStr += "XC";
+    } else if (oneNum == 5) {
+        ansStr += "L";
+    } else { 
+        ansStr += "L";
+        for (i=5; i < oneNum; i++) {
+          ansStr += "X";
+        }
+    }
+    // second digit
+    if (twoNum >= 1 && twoNum <= 3) { 
+       for (i = 0; i < twoNum; i++) {
+        ansStr += "I";
+       }
+    } else if (twoNum == 4) {
+        ansStr += "IV";
+    } else if (twoNum == 9) {
+        ansStr += "IX";
+    } else if (twoNum == 5) {
+        ansStr += "V";
+    } else if (twoNum >= 6 && twoNum <= 8) { 
+        ansStr += "V";
+        for (i=5; i < twoNum; i++) {
+          ansStr += "I";
+        }
+    }
+// three digits
+  } else if (forStr.length === 0) {
+    // first digit
+    if (oneNum >= 1 && oneNum <= 3) { 
+       for (i = 0; i < oneNum; i++) {
+        ansStr += "C";
+       }
+    } else if (oneNum == 4) {
+        ansStr += "CD";
+    } else if (oneNum == 9) {
+        ansStr += "CM";
+    } else if (oneNum == 5) {
+        ansStr += "D";
+    } else { 
+        ansStr += "D";
+        for (i=5; i < oneNum; i++) {
+          ansStr += "C";
+        }
+    }
+    // second digit
+    if (twoNum >= 1 && twoNum <= 3) { 
+       for (i = 0; i < twoNum; i++) {
+        ansStr += "X";
+       }
+    } else if (twoNum == 4) {
+        ansStr += "XL";
+    } else if (twoNum == 9) {
+        ansStr += "XC";
+    } else if (twoNum == 5) {
+        ansStr += "L";
+    } else if (twoNum >= 6 && twoNum <= 8) { 
+        ansStr += "L";
+        for (i=5; i < twoNum; i++) {
+          ansStr += "X";
+        }
+    }
+    // third digit
+    if (thrNum >= 1 && thrNum <= 3) { 
+       for (i = 0; i < thrNum; i++) {
+        ansStr += "I";
+       }
+    } else if (thrNum == 4) {
+        ansStr += "IV";
+    } else if (thrNum == 9) {
+        ansStr += "IX";
+    } else if (thrNum == 5) {
+        ansStr += "V";
+    } else if (thrNum >= 6 && thrNum <= 8) { 
+        ansStr += "V";
+        for (i=5; i < thrNum; i++) {
+          ansStr += "I";
+        }
+    }
+// four digits
+  } else {
+    // first digit
+    if (oneNum >= 1 && oneNum <= 3) { 
+       for (i = 0; i < oneNum; i++) {
+        ansStr += "M";
+       }
+    }/* else if (oneNum == 4) {
+        ansStr += "CD";
+    } else if (oneNum == 9) {
+        ansStr += "CM";
+    } else if (oneNum == 5) {
+        ansStr += "D";
+    } else { 
+        ansStr += "D";
+        for (i=5; i < oneNum; i++) {
+          ansStr += "C";
+        }
+    }*/
+    // second digit
+    if (twoNum >= 1 && twoNum <= 3) { 
+       for (i = 0; i < twoNum; i++) {
+        ansStr += "C";
+       }
+    } else if (twoNum == 4) {
+        ansStr += "CD";
+    } else if (twoNum == 9) {
+        ansStr += "CM";
+    } else if (twoNum == 5) {
+        ansStr += "D";
+    } else if (twoNum >= 6 && twoNum <= 8) { 
+        ansStr += "D";
+        for (i=5; i < twoNum; i++) {
+          ansStr += "C";
+        }
+    }
+    // third digit
+    if (thrNum >= 1 && thrNum <= 3) { 
+       for (i = 0; i < thrNum; i++) {
+        ansStr += "X";
+       }
+    } else if (thrNum == 4) {
+        ansStr += "XL";
+    } else if (thrNum == 9) {
+        ansStr += "XC";
+    } else if (thrNum == 5) {
+        ansStr += "L";
+    } else if (thrNum >= 6 && thrNum <= 8) { 
+        ansStr += "L";
+        for (i=5; i < thrNum; i++) {
+          ansStr += "X";
+        }
+    }
+    // fourth digit
+    if (forNum >= 1 && forNum <= 3) { 
+       for (i = 0; i < forNum; i++) {
+        ansStr += "I";
+       }
+    } else if (forNum == 4) {
+        ansStr += "IV";
+    } else if (forNum == 9) {
+        ansStr += "IX";
+    } else if (forNum == 5) {
+        ansStr += "V";
+    } else if (forNum >= 6 && forNum <= 8) { 
+        ansStr += "V";
+        for (i=5; i < forNum; i++) {
+          ansStr += "I";
+        }
+    }
+  }
+  
+  return ansStr;
+}
+
+convertToRoman(649);
