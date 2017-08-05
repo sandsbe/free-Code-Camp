@@ -1,0 +1,18 @@
+
+function mutation(arr) {
+// 1. Determine how many loops to run and elements to compare
+  var elementOne = arr[0].toLowerCase();
+  var counterOne = arr[0].length;
+  var elementTwo = arr[1].toLowerCase();
+  var counterTwo = arr[1].length;
+  var checkStr = "";
+
+  for (i = 0; i < counterTwo; i++) {
+   if (-1 === elementOne.indexOf(elementTwo[i])) {
+     return false;
+   } 
+  }
+  return true;
+}
+
+mutation(["hello", "hey"]);
