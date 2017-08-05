@@ -1,0 +1,35 @@
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  // 1. Put source properties into array to check if properties in collection
+  var sourceProps = Object.keys(source);
+  var sourceVals = [];
+  for (var key in source) {
+    sourceVals.push(source[key]);
+  }
+  var counter;
+  
+  // 2. for loop through each object in the array
+  for (var i = 0; i < collection.length; i ++) {
+    counter =0;
+    for (var j = 0; j < sourceProps.length; j++) {
+      if (collection[i].hasOwnProperty(sourceProps[j])) {
+        if (collection[i][sourceProps[j]] == sourceVals[j]) {
+          if (Object.keys(collection[i]).length >= sourceProps.length) {
+            counter += 1;
+          }
+        }
+      }       
+    }
+    if (counter == sourceProps.length) {
+      arr.push(collection[i]);
+    }
+  }
+  
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
