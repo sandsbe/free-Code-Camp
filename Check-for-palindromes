@@ -1,0 +1,21 @@
+function palindrome(str) {
+  // 1, remove punctuation
+  var replaceString = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+  // 2, make everything lowercase
+  var lowerCaseStr = replaceString.toLowerCase();
+  // 3, turn string into array
+  var splitArr = lowerCaseStr.split("");
+  // 4, reverse the array
+  var reverseArr = splitArr.reverse();
+  // 5, turn arrays into string
+  var reverseStr = reverseArr.toString();
+  // 6, remove punctionation, again
+  var firstStr = lowerCaseStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace(/\s+/g, '');
+  var secondStr = reverseStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace(/\s+/g, '');
+  // 7, compare strings
+  if (firstStr == secondStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
