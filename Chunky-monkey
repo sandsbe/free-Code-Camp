@@ -1,0 +1,23 @@
+
+function chunkArrayInGroups(arr, size) {
+  // 1. Create a pseudo array so can empty arr
+  var newArr = [];
+  var subArr = [];
+  // 2. Use while loop to continue to run until arr is empty
+  while (arr.length > 0) {
+  // 3. For loops to push array elements into new arrays
+    for (i=0; i < size; i++) {
+  // 4. Use if loop to check that arr is not empty midway through
+        if (arr.length > 0) {
+           subArr.push(arr.shift());  
+        }
+    } 
+   // 5. Push subArr into newArr and then empty subArr for next loop 
+      newArr.push(subArr);
+      subArr = [];
+  }
+  arr = newArr;  
+  return arr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
