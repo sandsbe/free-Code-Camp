@@ -1,0 +1,94 @@
+
+function rot13(str) { // LBH QVQ VG!
+  var newStr = '';
+  
+  for (i=0; i < str.length; i++) {
+    switch (str[i]) {
+      case 'A':
+        newStr += 'N';
+        break;
+      case 'B':
+        newStr += 'O';
+        break;
+      case 'C':
+        newStr += 'P';
+        break;
+      case 'D':
+        newStr += 'Q';
+        break;
+      case 'E':
+        newStr += 'R';
+        break;
+      case 'F':
+        newStr += 'S';
+        break;
+      case 'G':
+        newStr += 'T';
+        break;
+      case 'H':
+        newStr += 'U';
+        break;
+      case 'I':
+        newStr += 'V';
+        break;
+      case 'J':
+        newStr += 'W';
+        break;
+      case 'K':
+        newStr += 'X';
+        break;
+      case 'L': 
+        newStr += 'Y';
+        break;
+      case 'M':
+        newStr += 'Z';
+        break;
+      case 'N':
+        newStr += 'A';
+        break;
+      case 'O':
+        newStr += 'B';
+        break;
+      case 'P':
+        newStr += 'C';
+        break;
+      case 'Q':
+        newStr += 'D';
+        break;
+      case 'R':
+        newStr += 'E';
+        break;
+      case 'S':
+        newStr += 'F';
+        break;
+      case 'T':
+        newStr += 'G';
+        break;
+      case 'U':
+        newStr += 'H';
+        break;
+      case 'V':
+        newStr += 'I';
+        break;
+      case 'W':
+        newStr += 'J';
+        break;
+      case 'X':
+        newStr += 'K';
+        break;
+      case 'Y':
+        newStr += "L";
+        break;
+      case 'Z':
+        newStr += 'M';
+        break;
+      default:
+        newStr += str[i];
+    }
+  }
+  
+  return newStr;
+}
+
+// Change the inputs below to test
+rot13("SERR YBIR?");
