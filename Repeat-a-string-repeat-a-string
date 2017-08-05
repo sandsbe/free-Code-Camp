@@ -1,0 +1,16 @@
+
+function repeatStringNumTimes(str, num) {
+  // 1. Use if to kick out negative num
+  if (num > 0) {
+  var arr = [];
+  // 2. Use for loop to put string into array
+  for (i = 0; i < num; i++) {
+      arr += str;
+  }   arr.split();
+      return arr;
+} else {
+  str = "";
+  return str;
+}
+}
+repeatStringNumTimes("abc", 3);
