@@ -1,0 +1,12 @@
+
+function bouncer(arr) {
+// 1. Falsey values are not true
+
+  return arr.filter(function(element) {
+        if (element !== 0){
+            return element; // <-- falsy values are not true.
+        }
+    });
+}
+
+bouncer([7, "ate", "", false, 9]);
