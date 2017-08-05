@@ -1,0 +1,20 @@
+
+function titleCase(str) {
+// 1. Make string all lowercase
+  str = str.toLowerCase();
+// 2. Use split, create array from string
+  var arr = str.split(" ");
+// 3. Create array to push modified elements
+  var holdingArr = [];
+// 4. For loop through each array element
+  for (i=0; i < arr.length; i++){
+    holdingArr.push(arr[i].charAt(0).toUpperCase() + arr[i].slice(1));
+  }
+// 5. Use join to convert array to string  
+  var newStr = holdingArr.join();
+// 6. Replace commas in string with spaces  
+  str = newStr.replace(/\,/g," ");
+  return str;
+}
+
+titleCase("I'm a little tea pot");
